@@ -50,10 +50,10 @@ const Footer: React.FC = () => {
           <h2 className="mb-4 text-lg font-semibold sm:hidden">Links</h2>
           <ul className="space-y-4">
             {links.map((link, index) => (
-              <li key={index}>
+              <li key={index + "_key"}>
                 <Link
                   href={link.href}
-                  target={link.target || "_self"}
+                  target={link.target}
                   className="text-sm transition-colors duration-200 ease-in-out dark:text-[#fafafa99] dark:hover:text-[#fafafacc] dark:focus:text-[#fafafacc] dark:active:text-[#fafafacc]"
                 >
                   {link.title}
