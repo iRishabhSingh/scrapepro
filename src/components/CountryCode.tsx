@@ -36,7 +36,7 @@ export function CountryCode({
   countries,
   selectedCountry,
   setSelectedCountry,
-}: CountryCodeProps) {
+}: Readonly<CountryCodeProps>) {
   const [open, setOpen] = React.useState<boolean>(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
@@ -101,7 +101,7 @@ function CountryList({
   countries,
   setOpen,
   setSelectedCountry,
-}: CountryListProps) {
+}: Readonly<CountryListProps>) {
   return (
     <Command>
       <CommandInput placeholder="Search country by name or code..." />

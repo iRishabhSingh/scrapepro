@@ -1,5 +1,6 @@
 import { ContactUs } from "@/components/ContactUs";
 import GradientText from "@/components/GradientText";
+import ModeToggle from "@/components/mode-toggle";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
           Scrape
           <GradientText text="Pro" />
         </h1>
+        <ModeToggle />
       </div>
       <div className="min-h-screen">
         <ContactUs />

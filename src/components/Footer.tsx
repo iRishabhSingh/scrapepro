@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
                 <Link
                   href={link.href}
                   target={link.target || "_self"}
-                  className="text-sm text-[#fafafa99] transition-colors duration-200 ease-in-out hover:text-[#fafafacc] focus:text-[#fafafacc] active:text-[#fafafacc]"
+                  className="text-sm transition-colors duration-200 ease-in-out dark:text-[#fafafa99] dark:hover:text-[#fafafacc] dark:focus:text-[#fafafacc] dark:active:text-[#fafafacc]"
                 >
                   {link.title}
                 </Link>
@@ -67,14 +67,16 @@ const Footer: React.FC = () => {
           <h2 className="mb-4 text-lg font-semibold">Contact Us</h2>
           <ul className="space-y-4">
             {contactLinks.map((link, index) => (
-              <li key={index}>
+              <li key={index + "index"}>
                 {link.href === "#" ? (
-                  <span className="text-sm text-[#fafafa99]">{link.title}</span>
+                  <span className="text-sm dark:text-[#fafafa99]">
+                    {link.title}
+                  </span>
                 ) : (
                   <Link
                     href={link.href}
-                    target={link.target || "_self"}
-                    className="text-sm text-[#fafafa99] transition-colors duration-200 ease-in-out hover:text-[#fafafacc] focus:text-[#fafafacc] active:text-[#fafafacc]"
+                    target={link.target}
+                    className="text-sm transition-colors duration-200 ease-in-out dark:text-[#fafafa99] dark:hover:text-[#fafafacc] dark:focus:text-[#fafafacc] dark:active:text-[#fafafacc]"
                   >
                     {link.title}
                   </Link>
