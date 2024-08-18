@@ -31,7 +31,7 @@ const contactLinks: LinkItem[] = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="flex flex-wrap justify-between p-8 py-12 sm:px-8">
+    <footer className="flex flex-wrap justify-between p-8 py-12 md:px-16">
       {/* App Name and About Section - 50% Width */}
       <div className="w-full pb-8 md:w-1/2">
         <p className="relative z-20 bg-clip-text py-8 pt-0 text-2xl font-bold text-black text-transparent dark:text-white sm:text-4xl">
