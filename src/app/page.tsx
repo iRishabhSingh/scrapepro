@@ -1,6 +1,7 @@
 import { ContactUs } from "@/components/ContactUs";
 import GradientText from "@/components/GradientText";
 import ModeToggle from "@/components/mode-toggle";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
@@ -12,6 +13,9 @@ export default function Home() {
           <GradientText text="Pro" />
         </h1>
         <ModeToggle />
+      </div>
+      <div>
+        <Testimonials />
       </div>
       <div className="p-8 py-0 md:px-16 md:pr-0">
         <ContactUs />
