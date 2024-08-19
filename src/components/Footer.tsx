@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
           Scrape
           <GradientText text="Pro" />
         </p>
-        <p className="opacity-70 transition-opacity hover:opacity-100 focus:opacity-100 active:opacity-100 sm:w-1/2">
+        <p className="opacity-70 transition-opacity hover:opacity-100 focus:opacity-100 active:opacity-100 md:w-2/3">
           ScrapePro is a leading web scraping service provider, offering
           cutting-edge solutions for data extraction and analysis.
         </p>

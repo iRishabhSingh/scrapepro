@@ -394,8 +394,8 @@ export function GlobeContactUs() {
   ];
 
   return (
-    <div className="relative mx-auto flex h-[150px] w-[300px] items-center justify-center overflow-hidden md:h-full md:w-full lg:overflow-visible">
-      <div className="absolute top-0 z-10 h-[300px] w-auto md:left-[25%] md:h-[700px] md:w-[700px] lg:relative lg:left-0 lg:h-[400px] lg:w-[400px]">
+    <div className="relative mx-auto flex h-[150px] w-[300px] items-center justify-center overflow-hidden md:h-full md:w-full">
+      <div className="absolute top-0 z-50 h-[300px] w-auto md:left-[25%] md:h-[700px] md:w-[700px] lg:left-[50%]">
         <World data={sampleArcs} globeConfig={globeConfig} />
       </div>
     </div>
