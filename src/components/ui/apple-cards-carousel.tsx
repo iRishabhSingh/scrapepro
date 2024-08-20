@@ -1,19 +1,20 @@
 "use client";
+
 import React, {
-  useEffect,
   useRef,
   useState,
-  createContext,
+  useEffect,
   useContext,
+  createContext,
 } from "react";
 import {
+  IconX,
   IconArrowNarrowLeft,
   IconArrowNarrowRight,
-  IconX,
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
 import Image, { ImageProps } from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 
 interface CarouselProps {
@@ -165,7 +166,7 @@ export const Card = ({
 }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const { onCardClose, currentIndex } = useContext(CarouselContext);
+  const { onCardClose } = useContext(CarouselContext);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -195,56 +196,48 @@ export const Card = ({
     onCardClose(index);
   };
 
-  const containerVariants = {
-    initial: {},
-    animate: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
   const cardVariants = {
     offscreen: {
-      y: 100,
+      y: 50,
       opacity: 0,
     },
     onscreen: {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 0.8,
+        type: "tween",
+        ease: [0.25, 0.1, 0.25, 1],
+        duration: 0.6,
       },
     },
     offscreenReverse: {
-      y: -100,
+      y: -50,
       opacity: 0,
     },
     onscreenReverse: {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 0.8,
+        type: "tween",
+        ease: [0.25, 0.1, 0.25, 1],
+        duration: 0.6,
       },
     },
   };
 
   const imageVariants = {
     offscreen: {
-      scale: 0.8,
+      scale: 0.9,
       opacity: 0,
     },
     onscreen: {
       scale: 1,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "tween",
         duration: 0.8,
-        delay: 0.2,
+        delay: 0.3,
+        ease: [0.25, 0.1, 0.25, 1],
       },
     },
   };
@@ -305,7 +298,7 @@ export const Card = ({
       </AnimatePresence>
 
       <motion.div
-        className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border border-[#cccccc33] p-6 shadow-lg shadow-[#cccccc33] dark:border-[#80808033] dark:shadow-2xl dark:shadow-[#33333333] md:w-[calc(50%-16px)] lg:w-[calc(33%-16px)]"
+        className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border border-[#cccccc33] p-6 shadow-lg shadow-[#cccccc33] dark:border-[#80808033] dark:shadow-2xl dark:shadow-[#33333333] sm:w-full md:w-[calc(50%-16px)] lg:w-[calc(33%-16px)]"
         initial="offscreen"
         whileInView="onscreen"
         exit="offscreenReverse"
@@ -332,7 +325,7 @@ export const Card = ({
         <p className="mt-2 text-center text-gray-700 dark:text-gray-300">
           {card.description?.slice(0, 35)}...{" "}
           <motion.span
-            className="text-sm font-semibold text-blue-600 hover:underline dark:text-blue-400"
+            className="text-sm font-semibold text-blue-400 hover:underline"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
